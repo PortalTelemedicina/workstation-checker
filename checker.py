@@ -6,6 +6,7 @@ import os
 
 HOME_DIR=str(os.getenv('HOME'))
 NUGET_PASSWORD=str(os.getenv('PTM_NUGET_PASSWORD'))
+DEBUG = str(os.getenv('DEBUG', 'false')).lower() == 'true'
 
 # Check if executable exists
 def check_command(command, description):
