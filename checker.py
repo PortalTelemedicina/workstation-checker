@@ -40,11 +40,8 @@ env_commands = [
   (
     ["cat", HOME_DIR+"/.config/gcloud/application_default_credentials.json"],
     "GCloud ADC",
-    False),
-  (
-    ["cat", HOME_DIR+"/.ssh/id_rsa.pub"],
-    "Chave pública",
-    False),
+    False
+  ),
   (
     ["git", "clone", "--depth", "1", "git@github.com:PortalTelemedicina/ptm-tools", "/tmp/ptm-tools"],
     "Chave pública configurada no GitHub",
@@ -59,8 +56,7 @@ env_commands = [
     ["curl", "-s", "--fail", "-u", "appsettings:"+NUGET_PASSWORD, "https://nuget.ptmdev.com.br/v3/index.json"],
     "Senha do servidor NUGET",
     False
-  ),
-  
+  ),  
 ]
 
 # Function to run a command and check its output and exit code
