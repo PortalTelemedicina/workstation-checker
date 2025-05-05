@@ -68,12 +68,15 @@ def run_command(command, description, jsonOutputValidation):
             capture_output=True, 
             check=False
         )
-        if result.returncode == 0:
-            if jsonOutputValidation:
-                parsed_json = json.loads(result.stdout)
-                len(parsed_json) > 0
+        if result.returncode == 0 and jsonOutputValidation == False:
+          print(f"{description}: OK")
+        elif result.returncode == 0 and jsonOutputValidation == True:
+            parsed_json = json.loads(result.stdout)
             
-            print(f"{description}: OK")
+            if(len(parsed_json) > 0):
+              print(f"{description}: OK")
+            else:
+              print(f"{description}: Fail")
         else:
             print(f"{description}: Fail")
             if DEBUG:
